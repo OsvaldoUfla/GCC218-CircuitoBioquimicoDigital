@@ -1,5 +1,11 @@
-#include <iostream>
+/*
+    beecrowd | 1486
+Circuito Bioquímico Digital
 
+Codigo resolve o a questão  beecrowd | 1486 Circuito Bioquímico Digital, 
+*/
+
+#include <iostream>
 using namespace std;
 
 int main ()
@@ -11,23 +17,23 @@ int main ()
     {
         cin >>p >>n >>c; 
 
-        ptrMatriz = new int*[p];
-        for (int i=0; i<p; i++)
+        ptrMatriz = new int*[n];
+        for (int i=0; i<n; i++)
         {
-            ptrMatriz[i] = new int[n];
-        }
-
-        for(int i=0; i<p ;i++)
-        {
-            for(int j=0; j<n ;j++)
-            {
-                cin >> ptrMatriz[i][j];   
-            }
+            ptrMatriz[i] = new int[p];
         }
 
         for(int i=0; i<n ;i++)
         {
             for(int j=0; j<p ;j++)
+            {
+                cin >> ptrMatriz[i][j];   
+            }
+        }
+
+        for(int i=0; i<p ;i++)
+        {
+            for(int j=0; j<n ;j++)
             {
                 if(ptrMatriz[j][i])
                 {
@@ -48,8 +54,11 @@ int main ()
             }
             contador = 0;
         }
-
-        cout << palitos << "\n";
+        if(p > 0)
+        {
+            cout << palitos << "\n";
+            palitos =0;
+        }
         for (int i=0; i<p; i++)
         {
             delete[] ptrMatriz[i];
